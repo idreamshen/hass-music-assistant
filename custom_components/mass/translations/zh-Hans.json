@@ -1,0 +1,118 @@
+{
+  "issues": {
+    "prev_version": {
+      "title": "需要重新安装Music Assistant集成。",
+      "description": "Music Assistant 2.0需要重新安装Home Assistant集成。请从您的Home Assistant集成中移除Music Assistant条目并重新添加。"
+    },
+    "invalid_server_version": {
+      "title": "Music Assistant服务器版本不正确",
+      "description": "检查Music Assistant服务器和/或集成是否有更新可用。"
+    }
+  },
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "manual": {
+        "data": {
+          "url": "Music Assistant服务器的URL"
+        }
+      },
+      "on_supervisor": {
+        "title": "选择连接方式",
+        "description": "您是否想要使用官方Music Assistant服务器插件？\n\n如果您已经在另一个插件中、在自定义容器中、原生等方式运行Music Assistant服务器，请不要选择此选项。",
+        "data": {
+          "use_addon": "使用官方Music Assistant服务器插件"
+        }
+      },
+      "install_addon": {
+        "title": "插件安装已开始"
+      },
+      "start_addon": {
+        "title": "正在启动插件。"
+      },
+      "hassio_confirm": {
+        "title": "使用Music Assistant服务器插件设置Music Assistant集成"
+      },
+      "discovery_confirm": {
+        "description": "您想要将Music Assistant服务器 `{url}`添加到Home Assistant吗？",
+        "title": "发现Music Assistant服务器"
+      }
+    },
+    "error": {
+      "cannot_connect": "连接失败",
+      "unknown": "未知错误"
+    },
+    "abort": {
+      "addon_get_discovery_info_failed": "获取Music Assistant服务器插件发现信息失败。",
+      "addon_info_failed": "获取Music Assistant服务器插件信息失败。",
+      "addon_install_failed": "安装Music Assistant服务器插件失败。",
+      "addon_start_failed": "启动Music Assistant服务器插件失败。",
+      "already_configured": "设备已配置",
+      "already_in_progress": "配置流程已在进行中",
+      "not_matter_addon": "发现的插件不是官方Music Assistant服务器插件。",
+      "reconfiguration_successful": "成功重新配置Music Assistant集成。",
+      "cannot_connect": "连接失败"
+    },
+    "progress": {
+      "install_addon": "请等待Music Assistant服务器插件安装完成。这可能需要几分钟时间。",
+      "start_addon": "请等待Music Assistant服务器插件启动。此插件是Home Assistant中Music Assistant的动力源泉。这可能需要一些秒钟。"
+    }
+  },
+  "services": {
+    "play_media": {
+      "name": "播放媒体（高级）",
+      "description": "在Music Assistant播放器上播放媒体，并提供更细致的控制选项。",
+      "fields": {
+        "media_id": {
+          "name": "媒体ID",
+          "description": "您想要播放的项目的URI或名称。如果您想要播放/排队多个项目，请指定一个列表。"
+        },
+        "media_type": {
+          "name": "媒体类型",
+          "description": "要播放的内容类型。如艺术家、专辑、曲目或播放列表。如果省略将自动确定。"
+        },
+        "enqueue": {
+          "name": "排队",
+          "description": "内容是现在播放还是加入队列。"
+        },
+        "announce": {
+          "name": "通告",
+          "description": "媒体是否应该作为通告播放。"
+        },
+        "radio_mode": {
+          "name": "启用电台模式",
+          "description": "启用电台模式以基于所选内容自动生成播放列表。"
+        }
+      }
+    },
+    "search": {
+      "name": "搜索Music Assistant",
+      "description": "在Music Assistant库和所有提供者上执行全局搜索。",
+      "fields": {
+        "query": {
+          "name": "查询",
+          "description": "搜索查询。"
+        },
+        "media_type": {
+          "name": "媒体类型",
+          "description": "要搜索的内容类型。如艺术家、专辑、曲目或播放列表。如果省略则为所有类型。"
+        },
+        "limit": {
+          "name": "限制",
+          "description": "返回的最大项目数量（每种媒体类型）。"
+        }
+      }
+    }
+  },
+  "selector": {
+    "enqueue": {
+      "options": {
+        "play": "播放",
+        "next": "接着播放",
+        "add": "添加到队列",
+        "replace": "现在播放并清除队列",
+        "replace_next": "接着播放并清除队列"
+      }
+    }
+  }
+}
